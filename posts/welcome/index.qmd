@@ -1,0 +1,12 @@
+---
+title: "Welcome To My Blog"
+author: "Ian"
+date: "2025-02-13"
+categories: [what]
+---
+
+This is the first post in a Quarto blog. Welcome!
+
+![](Guy Billout Lone Man.png)
+
+Since this post doesn't specify an explicit `image`, the first image is here.

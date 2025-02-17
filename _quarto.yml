@@ -1,0 +1,22 @@
+project:
+  type: website
+  output-dir: docs
+
+website:
+  title: "Baden-520-Blog"
+  site-url: https://www.Baden520.io
+  description: "A Blog"
+  navbar:
+    right:
+      - about.qmd
+      - icon: github
+        href: https://github.com/Bayern1090
+format:
+  html:
+    theme:
+      - cosmo
+      - brand
+    css: styles.css
+
+
+

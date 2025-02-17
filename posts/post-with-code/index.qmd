@@ -1,0 +1,81 @@
+---
+title: "It me"
+author: "Ian"
+categories: [funy]
+image: "DDR Frieden Bruecke.jpg"
+---
+This is a post with executable code (maybe)
+
+Fun youtube video:
+https://www.youtube.com/watch?v=dQw4w9WgXcQ
+
+```{python}
+import matplotlib.pyplot as plt
+import numpy as np
+import pandas as pd
+import statistics
+
+x = np.array([10, 8, 13, 9, 11, 14, 6, 4, 12, 7, 5])
+y1 = np.array([8.04, 6.95, 7.58, 8.81, 8.33, 9.96, 7.24, 4.26, 10.84, 4.82, 5.68])
+y2 = np.array([9.14, 8.14, 8.74, 8.77, 9.26, 8.10, 6.13, 3.10, 9.13, 7.26, 4.74])
+y3 = np.array([7.46, 6.77, 12.74, 7.11, 7.81, 8.84, 6.08, 5.39, 8.15, 6.42, 5.73])
+x4 = np.array([8, 8, 8, 8, 8, 8, 8, 19, 8, 8, 8])
+y4 = np.array([6.58, 5.76, 7.71, 8.84, 8.47, 7.04, 5.25, 12.50, 5.56, 7.91, 6.89])
+
+xmean=np.mean(x)
+x4mean=np.mean(x4)
+y1var=statistics.variance(y1)
+y2var=statistics.variance(y2)
+y3var=statistics.variance(y3)
+y4var=statistics.variance(y4)
+y1mean=np.mean(y1)
+y2mean=np.mean(y2)
+y3mean=np.mean(y3)
+y4mean=np.mean(y4)
+
+data = {'Set':[1,2,3,4], 
+        'X Mean': [x4mean, x4mean, x4mean, x4mean], 
+        'Y Variances': [y1var,y2var,y3var,y4var], 
+        'Y Means':[y1mean,y2mean,y3mean,y4mean]}
+df = pd.DataFrame(data)
+#print(df)
+
+#Regressions
+m1,b1=np.polyfit(x,y1,1)
+m2,b2=np.polyfit(x,y2,1)
+m3,b3=np.polyfit(x,y3,1)
+m4,b4=np.polyfit(x4,y4,1)
+xl=np.arange(20)
+
+plt.subplot(2,2,1)
+plt.plot(x,y1,'.',c="blue",label=r'$\mu$ = 7.5')
+plt.plot(x,y1,'.',c="blue",label=r'$\sigma ^2$ = 4.127')
+plt.plot(x,m1*x+b1,color='red')
+plt.legend(loc="lower right")
+plt.ylim(4, 11)
+plt.show()
+plt.subplot(2,2,2)
+plt.plot(x,y2,'.',c="blue",label=r'$\mu$ = 7.5')
+plt.plot(x,y2,'.',c="blue",label=r'$\sigma ^2$ = 4.127')
+plt.plot(x,m2*x+b2,color='red')
+plt.legend(loc="lower right")
+plt.ylim(4, 11)
+plt.show()
+plt.subplot(2,2,3)
+plt.plot(x,y3,'.',c="blue",label=r'$\mu$ = 7.5')
+plt.plot(x,y3,'.',c="blue",label=r'$\sigma ^2$ = 4.123')
+plt.plot(x,m3*x+b3,color='red')
+plt.legend(loc="lower right")
+plt.ylim(4, 11)
+plt.show()
+plt.subplot(2,2,4)
+plt.xlim(7,20)
+plt.plot(x4,y4,'.',c="blue",label=r'$\mu$ = 7.5')
+plt.plot(x4,y4,'.',c="blue",label=r'$\sigma ^2$ = 4.123')
+plt.plot(0.4999*xl+3.0017,color='red')
+plt.legend(loc="lower right")
+plt.ylim(5, 13)
+plt.show()
+
+pd.melt(df, id_vars=None, value_vars=None, var_name=None, value_name='value', col_level=None, ignore_index=True)
+```

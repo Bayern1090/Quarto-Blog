@@ -3,6 +3,7 @@ title: "It me"
 author: "Ian"
 categories: [funy]
 image: "DDR Frieden Bruecke.jpg"
+code-fold: true
 ---
 This is a post with executable code (maybe)
 

@@ -3,6 +3,7 @@ title: "Actions and Targets"
 author: "Ian"
 date: "19-2-2025"
 categories: [Actions and Targets]
+image: "Morphine Structure.png"
 ---
 ---
 title: This will be a basic demonstration of different visuals to represent data. THe dataset chosen is going to be electoral results from the 2002 German federal election. Each of the main parties' results were taken and analyzed at a Bundesland (State) level and then visualized both independently and in common spaces. The following data are from 2002 wherein the SPD (Social Democratic Party of Germany) and the Greens won the election as a coalition and remained in power. An important thing to note is that elections in the Bundestag work differently than the US. The system over there has a plurality of political parties, with no one party maintaining dominance over others. This often results in different parties needing to form coalitions with each other in order to win elections and rule the country with the largest party of the coalition usually being the one whose leader becomes Kanzler or Kanzlerin.

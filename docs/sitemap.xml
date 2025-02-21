@@ -2,10 +2,18 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://www.Baden520.io/index.html</loc>
-    <lastmod>2025-02-20T03:49:10.195Z</lastmod>
+    <lastmod>2025-02-20T03:49:10.000Z</lastmod>
   </url>
   <url>
     <loc>https://www.Baden520.io/posts/post-with-code/index.html</loc>
     <lastmod>2025-02-18T00:08:02.895Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.Baden520.io/posts/actions-and-targets/Assignment3.html</loc>
+    <lastmod>2025-02-21T00:43:32.534Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.Baden520.io/posts/actions-and-targets/Index.html</loc>
+    <lastmod>2025-02-21T00:43:32.534Z</lastmod>
   </url>
 </urlset>

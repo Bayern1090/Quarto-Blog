@@ -5,9 +5,10 @@ categories: [Marks and Channels]
 image: "Morphine Structure.png"
 code-fold: true
 ---
-'This is going to be a great time. It is time to create miserable combinations of marks and channels. However, what are marks and channels? Marks are the items of a data, in my case they are the percentages of votes that each party got. Channels are the appearance of marks. Think things like color, shape, size, etc.' 
 
-Let us skip all the boring code since it is all going to eb recycled from the last post.'
+This is going to be a great time. It is time to create miserable combinations of marks and channels. However, what are marks and channels? Marks are the items of a data, in my case they are the percentages of votes that each party got. Channels are the appearance of marks. Think things like color, shape, size, etc. 
+
+ Let us skip all the boring code since it is all going to eb recycled from the last post.
 
 ```{python}
 import matplotlib.pyplot as plt
@@ -131,7 +132,7 @@ RP02 = np.array([SPD02RP, UN02RP,BG02RP,FDP02RP,PDS02RP]);
 SL02 = np.array([SPD02SL, UN02SL,BG02SL,FDP02SL,PDS02SL]);
 ```
 
-'Now begins the interesting part of trying to make the worst visualizations possible which may be surprisingly difficult. To begin with, I shall do a rerun of the very garishly bright FDP bar graph.'
+Now begins the interesting part of trying to make the worst visualizations possible which may be surprisingly difficult. To begin with, I shall do a rerun of the very garishly bright FDP bar graph
 
 ```{python}
 Bundeslaender = np.array(['Mecklenburg-Vorpommern','Schleswig Holstein','Hamburg','Bremen','Berlin','Brandenburg','Sachsen-Anhalt','Niedersachsen','Sachsen','Thueringen','Hessen','Nordrhein-Westfalen','Bayern','Baden Wuerttemberg','Rheinland-Pfalz','Saarland']);
@@ -148,9 +149,7 @@ plt.legend()
 plt.show() 
 ```
 
-```{python}
-'Very gelb much wow. Next, I shall make a connected scatter plot of all the data for the 2002 election to create an excellent mess.'
-```
+Very yellow much wow. Next, I shall make a connected scatter plot of all the data for the 2002 election to create an excellent mess.
 
 ```{python}
 Bundeslaender = np.array(['Mecklenburg-Vorpommern','Schleswig Holstein','Hamburg','Bremen','Berlin','Brandenburg','Sachsen-Anhalt','Niedersachsen','Sachsen','Thueringen','Hessen','Nordrhein-Westfalen','Bayern','Baden Wuerttemberg','Rheinland-Pfalz','Saarland']);
@@ -172,9 +171,7 @@ plt.legend(loc='right')
 plt.show() 
 ```
 
-```{python}
-'Maybe I will try a hexplot next for union 2002. It is a mess and does nothing to help convey information for people to discover trends or be able to identify strongholds of the party.'
-```
+Maybe I will try a hexplot next for union 2002. It is a mess and does nothing to help convey information for people to discover trends or be able to identify strongholds of the party.
 
 ```{python}
 plt.style.use('_mpl-gallery-nogrid')
@@ -188,11 +185,10 @@ ax.set(xlim=(0,20), ylim=(20,60))
 plt.show()
 ```
 
-```{python}
-'The next plot will be a box plot that shows the whole datasets for each party across all different geogrpahic boundaries. Except, this will not show geographic boundaries, it will shows minimum and maximum vote percentages with an unknown confidence interval. Have fun determining which  states are where within this box plot.'
-```
+The next plot will be a box plot that shows the whole datasets for each party across all different geogrpahic boundaries. Except, this will not show geographic boundaries, it'll shows minimum and maximum vote percentages with an unknown confidence interval. Have fun determining which  states are where within this box plot.
 
 ```{python}
+#| scrolled: true
 labels=['SPD','UN','BG','FDP','PDS']
 colors=['red','black','green','#FFFF00','#A2142F']
 

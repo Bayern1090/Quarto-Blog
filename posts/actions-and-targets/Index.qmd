@@ -3,7 +3,7 @@ title: "Actions and Targets"
 author: "Ian"
 date: "2025-2-19"
 categories: [Actions and Targets]
-image: "Morphine Structure.png"
+image: "2373.JPEG"
 code-fold: true
 ---
 

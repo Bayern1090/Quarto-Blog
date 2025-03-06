@@ -1,5 +1,9 @@
 ---
-jupyter: python3
+title: "Marks and Channels"
+author: "Ian"
+categories: [Marks and Channels]
+image: "Morphine Structure.png"
+code-fold: true
 ---
 
 This is going to be a great time. It is time to create miserable combinations of marks and channels. However, what are marks and channels? Marks are the items of a data, in my case they are the percentages of votes that each party got. Channels are the appearance of marks. Think things like color, shape, size, etc. 

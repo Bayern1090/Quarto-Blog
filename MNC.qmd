@@ -198,7 +198,7 @@ plt.show()
 
 Also, there is a favorite one of my experiments in data visuzliation I will add back in here
 
- The following plots are attempts to recreate my matlab surface plots. These plots are inevitable Dr. Robison.
+ The following plots are attempts to recreate my matlab surface plots. These plots are inevitable.
 
 ```{python}
 fig, ax = plt.subplots(subplot_kw={"projection": "3d"})

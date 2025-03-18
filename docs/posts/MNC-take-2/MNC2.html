@@ -178,7 +178,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <p>This is going to be a great time. It is time to create miserable combinations of marks and channels. However, what are marks and channels? Marks are the items of a data, in my case they are the percentages of votes that each party got. Channels are the appearance of marks. Think things like color, shape, size, etc.</p>
 <p>Let us skip all the boring code since it is all going to eb recycled from the last post.</p>
-<div id="f2b79520" class="cell" data-execution_count="1">
+<div id="edcc4586" class="cell" data-execution_count="1">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
@@ -304,7 +304,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </details>
 </div>
 <p>Now begins the interesting part of trying to make the worst visualizations possible which may be surprisingly difficult. To begin with, I shall do a rerun of the very garishly bright FDP bar graph</p>
-<div id="e835c3ac" class="cell" data-execution_count="2">
+<div id="cf22bd00" class="cell" data-execution_count="2">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>Bundeslaender <span class="op">=</span> np.array([<span class="st">'Mecklenburg-Vorpommern'</span>,<span class="st">'Schleswig Holstein'</span>,<span class="st">'Hamburg'</span>,<span class="st">'Bremen'</span>,<span class="st">'Berlin'</span>,<span class="st">'Brandenburg'</span>,<span class="st">'Sachsen-Anhalt'</span>,<span class="st">'Niedersachsen'</span>,<span class="st">'Sachsen'</span>,<span class="st">'Thueringen'</span>,<span class="st">'Hessen'</span>,<span class="st">'Nordrhein-Westfalen'</span>,<span class="st">'Bayern'</span>,<span class="st">'Baden Wuerttemberg'</span>,<span class="st">'Rheinland-Pfalz'</span>,<span class="st">'Saarland'</span>])<span class="op">;</span></span>
@@ -329,7 +329,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <p>Very yellow much wow. Next, I shall make a connected scatter plot of all the data for the 2002 election to create an excellent mess.</p>
-<div id="32b4c8fc" class="cell" data-execution_count="3">
+<div id="dd86fd30" class="cell" data-execution_count="3">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>Bundeslaender <span class="op">=</span> np.array([<span class="st">'Mecklenburg-Vorpommern'</span>,<span class="st">'Schleswig Holstein'</span>,<span class="st">'Hamburg'</span>,<span class="st">'Bremen'</span>,<span class="st">'Berlin'</span>,<span class="st">'Brandenburg'</span>,<span class="st">'Sachsen-Anhalt'</span>,<span class="st">'Niedersachsen'</span>,<span class="st">'Sachsen'</span>,<span class="st">'Thueringen'</span>,<span class="st">'Hessen'</span>,<span class="st">'Nordrhein-Westfalen'</span>,<span class="st">'Bayern'</span>,<span class="st">'Baden Wuerttemberg'</span>,<span class="st">'Rheinland-Pfalz'</span>,<span class="st">'Saarland'</span>])<span class="op">;</span></span>
@@ -359,7 +359,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <p>Maybe I will try a hexplot next for union 2002. It is a mess and does nothing to help convey information for people to discover trends or be able to identify strongholds of the party.</p>
-<div id="3aa1e086" class="cell" data-execution_count="4">
+<div id="d83f2679" class="cell" data-execution_count="4">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>plt.style.use(<span class="st">'_mpl-gallery-nogrid'</span>)</span>
@@ -381,7 +381,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <p>The next plot will be a box plot that shows the whole datasets for each party across all different geogrpahic boundaries. Except, this will not show geographic boundaries, it’ll show minimum and maximum vote percentages with an unknown confidence interval. Have fun determining which states are where within this box plot.</p>
-<div id="fb0375cf" class="cell" data-execution_count="5">
+<div id="0676d7ec" class="cell" data-execution_count="5">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>labels<span class="op">=</span>[<span class="st">'SPD'</span>,<span class="st">'UN'</span>,<span class="st">'BG'</span>,<span class="st">'FDP'</span>,<span class="st">'PDS'</span>]</span>
@@ -403,7 +403,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <p>Also, there is a favorite one of my experiments in data visuzliation I will add back in here</p>
 <p>The following plots are attempts to recreate my matlab surface plots. These plots are inevitable.</p>
-<div id="48882a9d" class="cell" data-execution_count="6">
+<div id="ab789dc0" class="cell" data-execution_count="6">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(subplot_kw<span class="op">=</span>{<span class="st">"projection"</span>: <span class="st">"3d"</span>})</span>
@@ -428,7 +428,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
-<div id="0f8834d4" class="cell" data-execution_count="7">
+<div id="328d2a50" class="cell" data-execution_count="7">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(subplot_kw<span class="op">=</span>{<span class="st">"projection"</span>: <span class="st">"3d"</span>})</span>
@@ -453,7 +453,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
-<div id="81510823" class="cell" data-execution_count="8">
+<div id="fe600fcb" class="cell" data-execution_count="8">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(subplot_kw<span class="op">=</span>{<span class="st">"projection"</span>: <span class="st">"3d"</span>})</span>

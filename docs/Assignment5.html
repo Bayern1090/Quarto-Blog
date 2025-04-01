@@ -102,7 +102,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 }</script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
 
+
+
 <script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
+
 
 
 <link rel="stylesheet" href="styles.css">
@@ -152,7 +155,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 
-<div id="aada2629" class="cell" data-execution_count="1">
+<div id="28288eba" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> plotly.express <span class="im">as</span> px</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
@@ -174,11 +177,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a><span class="co">#print(DFRSOIS)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Let’s start with the Vezina trophy for the best goalie.</p>
-<div id="7ed04c84" class="cell" data-execution_count="2">
+<div id="ebec68b5" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>DFGV<span class="op">=</span>pd.read_csv(<span class="st">"Goalies.csv"</span>, usecols<span class="op">=</span>[<span class="st">'Player'</span>,<span class="st">'GP'</span>,<span class="st">'TOI'</span>,<span class="st">'Shots Against'</span>,<span class="st">'Saves'</span>,<span class="st">'SV%'</span>,<span class="st">'HD Shots Against'</span>,<span class="st">'HD Saves'</span>,<span class="st">'HDSV%'</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>First I will filter out goalies who have fewer than 1000 saves</p>
-<div id="ca7f31c9" class="cell" data-execution_count="3">
+<div id="0f4c3ce2" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>filtered_DFGV <span class="op">=</span> DFGV[DFGV[<span class="st">'Saves'</span>] <span class="op">&gt;</span><span class="dv">1000</span>]</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>display(filtered_DFGV)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
@@ -388,7 +391,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <p>Next I’ll sort by the High Danger Save Percentages</p>
-<div id="cc604e10" class="cell" data-execution_count="4">
+<div id="36333a82" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>HDOrder<span class="op">=</span>filtered_DFGV.sort_values(by<span class="op">=</span>[<span class="st">'HDSV%'</span>], ascending<span class="op">=</span>[<span class="dv">0</span>])</span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>display(HDOrder)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
@@ -598,7 +601,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <p>One last order that I’m going to perform is to order goalies by save percentage before doing further filtering</p>
-<div id="d8da6b68" class="cell" data-execution_count="5">
+<div id="0e8dcc79" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>SVOrder<span class="op">=</span>filtered_DFGV.sort_values(by<span class="op">=</span>[<span class="st">'SV%'</span>], ascending<span class="op">=</span>[<span class="dv">0</span>])</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>display(SVOrder)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
@@ -808,7 +811,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <p>Now I’m going to run another filter on the data. This time I will set a filter that clears out anyone who has a High Danger Save Percentage lower than 80%.</p>
-<div id="477b5e27" class="cell" data-execution_count="6">
+<div id="5d21cd9d" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>HDSVFilter<span class="op">=</span>filtered_DFGV[filtered_DFGV[<span class="st">'HDSV%'</span>]<span class="op">&gt;</span><span class="fl">0.8</span>]</span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>display(HDSVFilter)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
@@ -982,7 +985,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <p>Next is a second filter to filter out those who have a saver percentage beneath 90%.</p>
-<div id="b7481b5e" class="cell" data-execution_count="7">
+<div id="16bd1736" class="cell" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>SVFilter<span class="op">=</span>HDSVFilter[HDSVFilter[<span class="st">'SV%'</span>]<span class="op">&gt;</span><span class="fl">0.9</span>]</span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>display(SVFilter)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
@@ -1108,7 +1111,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <p>The next two reorderings will be first by HDSV percentage and then by SV percentage</p>
-<div id="81747cec" class="cell" data-execution_count="8">
+<div id="08039d0e" class="cell" data-execution_count="8">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>HDSVF<span class="op">=</span>SVFilter.sort_values(by<span class="op">=</span>[<span class="st">'HDSV%'</span>], ascending<span class="op">=</span>[<span class="dv">0</span>])</span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>display(HDSVF)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
@@ -1233,7 +1236,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
-<div id="eda1705a" class="cell" data-execution_count="9">
+<div id="ca9289da" class="cell" data-execution_count="9">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>SVFF<span class="op">=</span>SVFilter.sort_values(by<span class="op">=</span>[<span class="st">'SV%'</span>], ascending<span class="op">=</span>[<span class="dv">0</span>])</span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>display(SVFF)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
@@ -1358,11 +1361,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
-<div id="5de6f646" class="cell" data-execution_count="10">
+<div id="afb2fdf4" class="cell" data-execution_count="10">
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>SAL<span class="op">=</span>SVFilter.sort_values(by<span class="op">=</span>[<span class="st">'Shots Against'</span>], ascending<span class="op">=</span>[<span class="dv">0</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Firstly, I will plot players and their total number of shots against.</p>
-<div id="1b5ecbdd" class="cell" data-execution_count="11">
+<div id="b5ba9294" class="cell" data-execution_count="11">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>plt.scatter(SAL[<span class="st">'Player'</span>],SAL[<span class="st">'Shots Against'</span>])</span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>plt.xticks(SAL[<span class="st">'Player'</span>],rotation<span class="op">=</span><span class="dv">90</span>)</span>
 <span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'Shots Against'</span>)</span>
@@ -1377,7 +1380,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <p>Next I will plot players and their save percentages and high danger save percentages.</p>
-<div id="91397534" class="cell" data-execution_count="12">
+<div id="9b2dc3bb" class="cell" data-execution_count="12">
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>HDSVLL<span class="op">=</span>SVFF.loc[:,<span class="st">'HDSV%'</span>]</span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>SVFFL<span class="op">=</span>SVFF.loc[:,<span class="st">'SV%'</span>]</span>
 <span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>GP<span class="op">=</span>SVFF.loc[:,<span class="st">'Player'</span>]</span>
@@ -1417,7 +1420,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h1>5) Filip Gustavsson</h1>
 <p>The next trophy is the James Norris Memorial trophy for the best overall defenseman for the position.</p>
 <p>The first thing I plan to do is run a filter on the data. For defesnsive players and other pertinent information like GP, TOI, CF, CA, CF% and PDO as metrics for their performance.</p>
-<div id="cdcf3443" class="cell" data-execution_count="13">
+<div id="05b30c6b" class="cell" data-execution_count="13">
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>DFRSOIS<span class="op">=</span>pd.read_csv(<span class="st">"SkaterOnIcestats.csv"</span>,usecols<span class="op">=</span>[<span class="st">'Player'</span>,<span class="st">'Position'</span>,<span class="st">'GP'</span>,<span class="st">'TOI'</span>,<span class="st">'CF'</span>,<span class="st">'CA'</span>,<span class="st">'CF%'</span>,<span class="st">'PDO'</span>])</span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>DFilter<span class="op">=</span>DFRSOIS.sort_values(by<span class="op">=</span>[<span class="st">'Position'</span>])</span>
 <span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>D<span class="op">=</span>DFilter[DFilter[<span class="st">'Position'</span>]<span class="op">==</span><span class="st">'D'</span>]</span>
@@ -1570,7 +1573,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <p>Next I will run a series of filters to filter for time on the ice and games played.</p>
-<div id="2cabf428" class="cell" data-execution_count="14">
+<div id="b21f87b6" class="cell" data-execution_count="14">
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>DPFilter<span class="op">=</span>D[D[<span class="st">'GP'</span>]<span class="op">&gt;</span><span class="dv">60</span>]</span>
 <span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>TOIDFilter<span class="op">=</span>DPFilter[DPFilter[<span class="st">'TOI'</span>]<span class="op">&gt;</span><span class="dv">1300</span>]</span>
 <span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>display(TOIDFilter)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -1765,7 +1768,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <p>I will reorder based on the total time on the ice that players are getting.</p>
-<div id="2d3c5bd7" class="cell" data-execution_count="15">
+<div id="0daa8fcb" class="cell" data-execution_count="15">
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>TOIDOrder<span class="op">=</span>TOIDFilter.sort_values(by<span class="op">=</span>[<span class="st">'TOI'</span>],ascending<span class="op">=</span>[<span class="dv">0</span>])</span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>display(TOIDOrder)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
@@ -1959,7 +1962,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <p>From here I can see that CF and CA values don’t directly correlate with time on the ice. From here I will reorder based on the CF% as a value greater than 55% is considered to be the best of the best.</p>
-<div id="ab607e5a" class="cell" data-execution_count="16">
+<div id="99bbd470" class="cell" data-execution_count="16">
 <div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>CFOrder<span class="op">=</span>TOIDOrder.sort_values(by<span class="op">=</span>[<span class="st">'CF%'</span>],ascending<span class="op">=</span>[<span class="dv">0</span>])</span>
 <span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>display(CFOrder)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
@@ -2152,7 +2155,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
-<div id="23141b60" class="cell" data-execution_count="17">
+<div id="942c5316" class="cell" data-execution_count="17">
 <div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>CF<span class="op">=</span>CFOrder.loc[:,<span class="st">'CF'</span>]</span>
 <span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>TOID<span class="op">=</span>CFOrder.loc[:,<span class="st">'TOI'</span>]</span>
 <span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>DP<span class="op">=</span>CFOrder.loc[:,<span class="st">'Player'</span>]</span>
@@ -2171,7 +2174,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <p>One final reordering will be based on PDO values as a value greater than one means that players are playing better than expected.</p>
-<div id="b034c5e6" class="cell" data-execution_count="18">
+<div id="51ba805a" class="cell" data-execution_count="18">
 <div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>PDOrder<span class="op">=</span>TOIDOrder.sort_values(by<span class="op">=</span>[<span class="st">'PDO'</span>],ascending<span class="op">=</span>[<span class="dv">0</span>])</span>
 <span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>PDOD<span class="op">=</span>PDOrder.loc[:,<span class="st">'PDO'</span>]</span>
 <span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>display(PDOrder)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -2366,7 +2369,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <p>The following plot will plot players PDO values and their CF values which are their CF percentages divided by 100% to get them to a discrete decimal value scale. I also took the players’ time on the ice and divided it by 1000 seconds to get a discrete value for how many seconds they spend on the ice with the basis being 1000 seconds.</p>
-<div id="a874f94d" class="cell" data-execution_count="19">
+<div id="bd4c2ad0" class="cell" data-execution_count="19">
 <div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>PD1<span class="op">=</span>plt.scatter(DP,PDOD)</span>
 <span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>PD2<span class="op">=</span>plt.scatter(DP,PDOrder[<span class="st">'CF%'</span>]<span class="op">/</span><span class="dv">100</span>)</span>
 <span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>PD3<span class="op">=</span>plt.scatter(DP,PDOrder[<span class="st">'TOI'</span>]<span class="op">/</span><span class="dv">1000</span>)</span>
@@ -2403,7 +2406,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h1>5) Brent Burns</h1>
 <p>The next trophy is going to be the Calder Memorial Trophy which goes to the best rookie in the league. I’m going to divide the data for rookies between goalies and non-goalies.</p>
 <p>First comes the rookie goalies. The data will be reordered to show who has had the most shots taken against them. Then the first filter will be applied. This will be based on games played.</p>
-<div id="9f69cb7f" class="cell" data-execution_count="20">
+<div id="6f910644" class="cell" data-execution_count="20">
 <div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>DFRG<span class="op">=</span>pd.read_csv(<span class="st">"RookieGoalies.csv"</span>,usecols<span class="op">=</span>[<span class="st">'Player'</span>,<span class="st">'GP'</span>,<span class="st">'TOI'</span>,<span class="st">'Shots Against'</span>,<span class="st">'Saves'</span>,<span class="st">'SV%'</span>,<span class="st">'HD Shots Against'</span>,<span class="st">'HD Saves'</span>,<span class="st">'HDSV%'</span>])</span>
 <span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>DFRGFilter<span class="op">=</span>DFRG[DFRG[<span class="st">'GP'</span>]<span class="op">&gt;</span><span class="dv">25</span>]</span>
 <span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>DFRGSAO<span class="op">=</span>DFRG.sort_values(by<span class="op">=</span>[<span class="st">'Shots Against'</span>],ascending<span class="op">=</span>[<span class="dv">0</span>])</span>
@@ -2903,7 +2906,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
-<div id="619cdc72" class="cell" data-execution_count="21">
+<div id="e9c541ab" class="cell" data-execution_count="21">
 <div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>RGSV<span class="op">=</span>DFRGFilter.loc[:,<span class="st">'SV%'</span>]</span>
 <span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>RGHDSV<span class="op">=</span>DFRGFilter.loc[:,<span class="st">'HDSV%'</span>]</span>
 <span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>RGP<span class="op">=</span>DFRGFilter.loc[:,<span class="st">'Player'</span>]</span>
@@ -2922,7 +2925,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
-<div id="3a65f588" class="cell" data-execution_count="22">
+<div id="fad54f02" class="cell" data-execution_count="22">
 <div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>RGSAT<span class="op">=</span>DFRGFilter.sort_values(by<span class="op">=</span>[<span class="st">'Shots Against'</span>],ascending<span class="op">=</span>[<span class="dv">0</span>])</span>
 <span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>display(RGSAT)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
@@ -3059,7 +3062,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
-<div id="5f28b3af" class="cell" data-execution_count="23">
+<div id="b21adcb5" class="cell" data-execution_count="23">
 <div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>plt.scatter(RGP,RGSAT[<span class="st">'Shots Against'</span>])</span>
 <span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>plt.xticks(RGP,rotation<span class="op">=</span><span class="dv">90</span>)</span>
 <span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'Shots Against'</span>)</span>
@@ -3095,7 +3098,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="joseph-woll" class="level1">
 <h1>5) Joseph Woll</h1>
 <p>For the rest of the rookies I will initially pull all the data and filter them out by having a minimum CF value of 1100 and a minimum time on the ice of 1100 seconds. I’ll then reorder the rookie skater on ice data by PDO and CF% values in descending order. Afterward I will scale the CF% by dividing them by 100 to get them on the same scale as the PDO values and plot them against each other.</p>
-<div id="c880e12d" class="cell" data-execution_count="24">
+<div id="0bd1a203" class="cell" data-execution_count="24">
 <div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>DFRSIT<span class="op">=</span>pd.read_csv(<span class="st">"RookieSkaterOnIce.csv"</span>)</span>
 <span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>DFRSOIS<span class="op">=</span>pd.read_csv(<span class="st">"RookieSkaterIndividual.csv"</span>)</span>
 <span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>DFRSITFilter<span class="op">=</span>DFRSIT[DFRSIT[<span class="st">'CF'</span>]<span class="op">&gt;</span><span class="dv">1100</span>]</span>
@@ -3255,7 +3258,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <p>I also worked to get goals,total assists, giveaways, takeaways, and shots blocked. I’ll plot these against each other.</p>
-<div id="7c7ae8ca" class="cell" data-execution_count="25">
+<div id="ad1c3b66" class="cell" data-execution_count="25">
 <div class="sourceCode cell-code" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>fig, (ax1,ax2) <span class="op">=</span> plt.subplots(<span class="dv">1</span>, <span class="dv">2</span>, figsize<span class="op">=</span>(<span class="dv">10</span>, <span class="dv">5</span>))</span>
 <span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>plt.subplots_adjust(left<span class="op">=</span><span class="fl">0.1</span>, right<span class="op">=</span><span class="fl">0.9</span>, bottom<span class="op">=</span><span class="fl">0.1</span>, top<span class="op">=</span><span class="fl">0.9</span>, wspace<span class="op">=</span><span class="fl">0.2</span>, hspace<span class="op">=</span><span class="fl">0.4</span>)</span>
 <span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> ax <span class="kw">in</span> fig.axes:</span>
@@ -3300,7 +3303,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="logan-thompson-1" class="level1">
 <h1>5) Logan Thompson</h1>
 <p>Next comes the Frank J Selke Trophy for the best overall defenseman in the league. This will include lefts and rights as well.</p>
-<div id="e3815504" class="cell" data-execution_count="26">
+<div id="3927ce5b" class="cell" data-execution_count="26">
 <div class="sourceCode cell-code" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>DFRSOIS<span class="op">=</span>pd.read_csv(<span class="st">"SkaterOnIcestats.csv"</span>,usecols<span class="op">=</span>[<span class="st">'Player'</span>,<span class="st">'Position'</span>,<span class="st">'GP'</span>,<span class="st">'TOI'</span>,<span class="st">'CF'</span>,<span class="st">'CA'</span>,<span class="st">'CF%'</span>,<span class="st">'PDO'</span>])</span>
 <span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>DFilter<span class="op">=</span>DFRSOIS.sort_values(by<span class="op">=</span>[<span class="st">'Position'</span>])</span>
 <span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a>DP1<span class="op">=</span>DFilter[DFilter[<span class="st">'Position'</span>]<span class="op">==</span><span class="st">'D'</span>]</span>
@@ -3380,7 +3383,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb26-77"><a href="#cb26-77" aria-hidden="true" tabindex="-1"></a>OKR<span class="op">=</span>BRCF</span>
 <span id="cb26-78"><a href="#cb26-78" aria-hidden="true" tabindex="-1"></a>OKL<span class="op">=</span>BLCF</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="33c88feb" class="cell" data-execution_count="27">
+<div id="23578feb" class="cell" data-execution_count="27">
 <div class="sourceCode cell-code" id="cb27"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>fig, (ax1,ax2,ax3) <span class="op">=</span> plt.subplots(<span class="dv">1</span>, <span class="dv">3</span>, figsize<span class="op">=</span>(<span class="dv">10</span>, <span class="dv">5</span>))</span>
 <span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>plt.subplots_adjust(left<span class="op">=</span><span class="fl">0.1</span>, right<span class="op">=</span><span class="fl">0.9</span>, bottom<span class="op">=</span><span class="fl">0.1</span>, top<span class="op">=</span><span class="fl">0.9</span>, wspace<span class="op">=</span><span class="fl">0.2</span>, hspace<span class="op">=</span><span class="fl">0.4</span>)</span>
 <span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> ax <span class="kw">in</span> fig.axes:</span>
@@ -3431,7 +3434,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h1>5) William Nylander</h1>
 <p>Next will be the Hart Memorial Trophy for the player dubbed most valuable to his team. For the sake of time this will solely be based off of previously generated visualizaitons.</p>
 <p>The first visulization will be for the goalies. Something important to note is that the values in the visualizations will be different for the goalies since they lack a CF% and PDO value compared to offensive and defensive players.</p>
-<div id="64c9df0d" class="cell" data-execution_count="28">
+<div id="bb858f4e" class="cell" data-execution_count="28">
 <div class="sourceCode cell-code" id="cb28"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>HDSVLL<span class="op">=</span>SVFF.loc[:,<span class="st">'HDSV%'</span>]</span>
 <span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>SVFFL<span class="op">=</span>SVFF.loc[:,<span class="st">'SV%'</span>]</span>
 <span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a>GP<span class="op">=</span>SVFF.loc[:,<span class="st">'Player'</span>]</span>
@@ -3450,7 +3453,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <p>Next will be the defensemen.</p>
-<div id="47b6e671" class="cell" data-execution_count="29">
+<div id="7a8a3cc3" class="cell" data-execution_count="29">
 <div class="sourceCode cell-code" id="cb29"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>PD1<span class="op">=</span>plt.scatter(DP,PDOD)</span>
 <span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a>PD2<span class="op">=</span>plt.scatter(DP,PDOrder[<span class="st">'CF%'</span>]<span class="op">/</span><span class="dv">100</span>)</span>
 <span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a>PD3<span class="op">=</span>plt.scatter(DP,PDOrder[<span class="st">'TOI'</span>]<span class="op">/</span><span class="dv">1000</span>)</span>
@@ -3468,7 +3471,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <p>Now come all the defensive players including the left and right defenders.</p>
-<div id="07de8f88" class="cell" data-execution_count="30">
+<div id="fae097a4" class="cell" data-execution_count="30">
 <div class="sourceCode cell-code" id="cb30"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a>fig, (ax1,ax2,ax3) <span class="op">=</span> plt.subplots(<span class="dv">1</span>, <span class="dv">3</span>, figsize<span class="op">=</span>(<span class="dv">10</span>, <span class="dv">5</span>))</span>
 <span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a>plt.subplots_adjust(left<span class="op">=</span><span class="fl">0.1</span>, right<span class="op">=</span><span class="fl">0.9</span>, bottom<span class="op">=</span><span class="fl">0.1</span>, top<span class="op">=</span><span class="fl">0.9</span>, wspace<span class="op">=</span><span class="fl">0.2</span>, hspace<span class="op">=</span><span class="fl">0.4</span>)</span>
 <span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> ax <span class="kw">in</span> fig.axes:</span>
@@ -3499,7 +3502,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <p>Lastly, we’ll bring the rookies into the ring since they too deserve to be considered for being the most valuable player potentially.</p>
-<div id="48f9b214" class="cell" data-execution_count="31">
+<div id="339f3178" class="cell" data-execution_count="31">
 <div class="sourceCode cell-code" id="cb31"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a>RGSV<span class="op">=</span>DFRGFilter.loc[:,<span class="st">'SV%'</span>]</span>
 <span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a>RGHDSV<span class="op">=</span>DFRGFilter.loc[:,<span class="st">'HDSV%'</span>]</span>
 <span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a>RGP<span class="op">=</span>DFRGFilter.loc[:,<span class="st">'Player'</span>]</span>
@@ -3518,7 +3521,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
-<div id="905e9737" class="cell" data-execution_count="32">
+<div id="ef0770ab" class="cell" data-execution_count="32">
 <div class="sourceCode cell-code" id="cb32"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a>fig, (ax1,ax2) <span class="op">=</span> plt.subplots(<span class="dv">1</span>, <span class="dv">2</span>, figsize<span class="op">=</span>(<span class="dv">10</span>, <span class="dv">5</span>))</span>
 <span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a>plt.subplots_adjust(left<span class="op">=</span><span class="fl">0.1</span>, right<span class="op">=</span><span class="fl">0.9</span>, bottom<span class="op">=</span><span class="fl">0.1</span>, top<span class="op">=</span><span class="fl">0.9</span>, wspace<span class="op">=</span><span class="fl">0.2</span>, hspace<span class="op">=</span><span class="fl">0.4</span>)</span>
 <span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> ax <span class="kw">in</span> fig.axes:</span>
@@ -3544,7 +3547,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <p>Now that all of the previously generated visualiztions are here, it’s time to get a new one added to the mix. Essentially it’ll be just like the Rookie Goals and Assists set of visualizations but for the more seasoned skaters. TOI will be divided by 100 seconds to properly scale it and discreitze it so it can be more easily visualized.</p>
-<div id="fe59fb04" class="cell" data-execution_count="33">
+<div id="7fb86e06" class="cell" data-execution_count="33">
 <div class="sourceCode cell-code" id="cb33"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a>DFSIT <span class="op">=</span> pd.read_csv(<span class="st">"SkaterOnIcestats.csv"</span>)</span>
 <span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a>DFSITFilter<span class="op">=</span>DFSIT[DFSIT[<span class="st">'CF'</span>]<span class="op">&gt;</span><span class="dv">1550</span>]</span>
 <span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a>PDOSOrder<span class="op">=</span>DFSITFilter.sort_values(by<span class="op">=</span>[<span class="st">'PDO'</span>],ascending<span class="op">=</span>[<span class="dv">0</span>])</span>
@@ -3561,7 +3564,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb33-14"><a href="#cb33-14" aria-hidden="true" tabindex="-1"></a>EXSRPRS<span class="op">=</span>DFSITFilter.loc[:,<span class="st">'Player'</span>]</span>
 <span id="cb33-15"><a href="#cb33-15" aria-hidden="true" tabindex="-1"></a>OSP<span class="op">=</span>pd.DataFrame(DFSITFilter[<span class="st">'Player'</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="b1827a9c" class="cell" data-execution_count="34">
+<div id="227978da" class="cell" data-execution_count="34">
 <div class="sourceCode cell-code" id="cb34"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a>fig, (ax1,ax2) <span class="op">=</span> plt.subplots(<span class="dv">1</span>, <span class="dv">2</span>, figsize<span class="op">=</span>(<span class="dv">10</span>, <span class="dv">5</span>))</span>
 <span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a>plt.subplots_adjust(left<span class="op">=</span><span class="fl">0.1</span>, right<span class="op">=</span><span class="fl">0.9</span>, bottom<span class="op">=</span><span class="fl">0.1</span>, top<span class="op">=</span><span class="fl">0.9</span>, wspace<span class="op">=</span><span class="fl">0.2</span>, hspace<span class="op">=</span><span class="fl">0.4</span>)</span>
 <span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> ax <span class="kw">in</span> fig.axes:</span>
@@ -3605,7 +3608,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="john-carlson-2" class="level1">
 <h1>5) John Carlson</h1>
 <p>Lastly comes the Lady Byng trophy given to the athlete who displays the best sportsmanship and skills. Information related to skill is going to be pulled from the Hart Memorial Trophy visualizations above, but for sportsmanship the primary metrics being looked at will be penalties incurred by skaters.</p>
-<div id="30b174c3" class="cell" data-execution_count="35">
+<div id="76cd2873" class="cell" data-execution_count="35">
 <div class="sourceCode cell-code" id="cb35"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a>RPEN<span class="op">=</span>pd.read_csv(<span class="st">"RookieSkaterIndividual.csv"</span>,usecols<span class="op">=</span>[<span class="st">'Player'</span>,<span class="st">'TOI'</span>,<span class="st">'PIM'</span>,<span class="st">'Total Penalties'</span>,<span class="st">'Minor'</span>,<span class="st">'Major'</span>,<span class="st">'Misconduct'</span>,<span class="st">'Penalties Drawn'</span>])</span>
 <span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a>SPEN<span class="op">=</span>pd.read_csv(<span class="st">"SkaterIndividualstats.csv"</span>,usecols<span class="op">=</span>[<span class="st">'Player'</span>,<span class="st">'TOI'</span>,<span class="st">'PIM'</span>,<span class="st">'Total Penalties'</span>,<span class="st">'Minor'</span>,<span class="st">'Major'</span>,<span class="st">'Misconduct'</span>,<span class="st">'Penalties Drawn'</span>])</span>
 <span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a>SPEN.sort_values(by<span class="op">=</span>[<span class="st">'Major'</span>],ascending<span class="op">=</span>[<span class="dv">1</span>])</span>
@@ -3988,7 +3991,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <p>The players with the best sportmanship will have the lowest SPENT1 values above. The problem is that there are tons of them with a score of 0. I then sorted by TOI with a minimum TOI of 1500 required. From here I looked at more seasoned players who were in the above nominations. These include Cale Makar, Erik Karlsson, John Carlson, and Zach Werenski. Next will come the rookies.</p>
-<div id="89d35dba" class="cell" data-execution_count="36">
+<div id="f58cb26d" class="cell" data-execution_count="36">
 <div class="sourceCode cell-code" id="cb36"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a>RPENFilter<span class="op">=</span>RPEN[RPEN[<span class="st">'TOI'</span>]<span class="op">&gt;</span><span class="dv">1000</span>]</span>
 <span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a>display(RPENFilter)</span>
 <span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a>RPPS<span class="op">=</span>RPENFilter.loc[:,<span class="st">'Player'</span>]</span>
@@ -4367,7 +4370,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
-<div id="a1011769" class="cell" data-execution_count="37">
+<div id="b77e2e21" class="cell" data-execution_count="37">
 <div class="sourceCode cell-code" id="cb37"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a>Cale<span class="op">=</span><span class="dv">42</span></span>
 <span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a>Erik<span class="op">=</span><span class="dv">43</span></span>
 <span id="cb37-3"><a href="#cb37-3" aria-hidden="true" tabindex="-1"></a>John<span class="op">=</span><span class="dv">43</span></span>
